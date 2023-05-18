@@ -62,6 +62,17 @@ def guardar_gasto():
         messagebox.showerror("Error", "El usuario no existe.")
         return
     
+      # Validar que los campos no estén vacíos
+    if not monto:
+        messagebox.showerror("Error", "El campo monto no puede ser vacio.")
+        return
+    
+    try:
+        monto = int(monto)  # Convertir el monto a entero
+    except ValueError:
+        messagebox.showerror("Error", "El campo monto debe ser un número entero.")
+        return
+    
     # Guardar el gasto en el archivo "gastos.json"
     gasto = {
         "email": email,
@@ -69,11 +80,6 @@ def guardar_gasto():
         "categoria": categoria,
         "monto": monto
     }
-
-    # Validar que los campos no estén vacíos
-    if not monto:
-        messagebox.showerror("Error", "El campo monto no puede ser vacio.")
-        return
 
     # Cargar los gastos existentes del archivo JSON
     try:
@@ -120,11 +126,6 @@ label_usuario.grid(row=2, column=0, padx=1, pady=1)
 
 label_n_usuario = Label(ventana, text=f"{nombre_usuario}", font=fuente)
 label_n_usuario.grid(row=2, column=1, padx=1, pady=1)
-#usuarios = cargar_usuarios()
-#var_usuario = StringVar(ventana)
-#var_usuario.set(usuarios[0])
-#dropdown_usuario = OptionMenu(ventana, var_usuario, *usuarios)
-#dropdown_usuario.grid(row=2, column=1, padx=1, pady=1)
 
 label_categoria = Label(ventana, text="Categoría:")
 label_categoria.grid(row=3, column=0, padx=1, pady=1)

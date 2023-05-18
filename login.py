@@ -45,15 +45,11 @@ def iniciar_sesion():
             except IOError:
                 messagebox.showerror("Error", "No se pudo guardar la sesión.")
                 return
-
-            # Mostrar mensaje de inicio de sesión exitoso
-            messagebox.showinfo("Inicio de Sesión", "Inicio de sesión exitoso.")
-
             # Cerrar la ventana de inicio de sesión
             ventana_inicio.destroy()
 
             # Abrir la ventana principal
-            abrir_ventana_principal()
+            subprocess.run(["python", "main_2.py"])
             return
 
     # Mostrar mensaje de error de inicio de sesión

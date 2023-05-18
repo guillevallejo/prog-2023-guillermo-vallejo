@@ -61,17 +61,21 @@ etiqueta_bienvenida.grid(row=2, column=0, padx=1, pady=1,columnspan=5, sticky='n
 # Funciones para los botones
 def ventana_registro():
     # Cerrar la ventana de bienvenida
+    ventana.destroy()
     subprocess.run(["python", "gas_reg.py"])
 
 def ventana_busqueda():
     # Cerrar la ventana de bienvenida
+    ventana.destroy()
     subprocess.run(["python", "gas_list.py"])
 
 def ventana_elimina():
     # Cerrar la ventana de bienvenida
+    ventana.destroy()
     subprocess.run(["python", "gas_del.py"])
 
 def ventana_grafico():
+    ventana.destroy()
     # Cerrar la ventana de bienvenida
     subprocess.run(["python", "grafico.py"])
 

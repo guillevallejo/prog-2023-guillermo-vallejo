@@ -34,5 +34,10 @@
         "nombre": "234",
         "email": "adsfa@sssadf.xxx",
         "password": "sdf"
+    },
+    {
+        "nombre": "Unab",
+        "email": "unab@unab.edu.co",
+        "password": "123"
     }
 ]

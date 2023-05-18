@@ -1,13 +1,13 @@
 import json
 import tkinter as tk
-from tkinter import ttk
+from tkinter import ttk, PhotoImage, Label, messagebox
 import menu
 from sesion import sesion
 
 # Crear la ventana principal
 ventana = tk.Tk()
 ventana.title('Lista de Categorías')
-menu.crear_menu(ventana) # Inserta el menu
+menu.crear_menu(ventana)  # Inserta el menú
 
 # Determinar el tamaño de la fuente para los labels
 font = ('Arial', 14)
@@ -21,41 +21,35 @@ logo_label.grid()
 label_titulo = tk.Label(ventana, text='*** Listado de Categorías ***', font=font, justify=tk.CENTER)
 label_titulo.grid()
 
-# Crear un widget de caja de texto para mostrar la lista de categorías
-output_categorias = tk.Text(ventana, width=50, height=10)
-output_categorias.grid()
+# Crear el árbol para mostrar las categorías
+lista_categorias = ttk.Treeview(ventana, columns=("descripcion",))
+lista_categorias.heading("#0", text="Categoría")
+lista_categorias.column("#0", width=150)
+lista_categorias.heading("descripcion", text="Descripción")
+lista_categorias.grid(row=2, column=0, columnspan=5, sticky='nsew')
 
-# Crear un botón para cargar la lista de categorías
-button_cargar = tk.Button(ventana, text='Cargar')
-button_cargar.grid()
-
-# Definir la función que se ejecutará al hacer clic en el botón de cargar
 def cargar_categorias():
     # Cargar la lista de categorías del archivo JSON
     try:
         with open("data/categorias.json", "r", encoding="utf8") as archivo:
             categorias = json.load(archivo)
     except FileNotFoundError:
-        # Si el archivo no existe, mostrar un mensaje en la caja de texto de salida
-        output_categorias.delete(1.0, tk.END)
-        output_categorias.insert(tk.END, 'No hay categorías registradas.')
+        # Si el archivo no existe, mostrar un mensaje de error
+        messagebox.showerror("Error", "No hay categorías registradas.")
         return
 
-    # Crear una lista de cadenas para almacenar las categorías y sus descripciones
-    categorias_str = []
+    # Limpiar el árbol antes de cargar las categorías
+    lista_categorias.delete(*lista_categorias.get_children())
+
+    # Insertar las categorías en el árbol
     for categoria in categorias:
-        categoria_str = f"{categoria['nombre']}: {categoria['descripcion']}\n"
-        categorias_str.append(categoria_str)
+        nombre = categoria["nombre"]
+        descripcion = categoria["descripcion"]
+        lista_categorias.insert("", tk.END, text=nombre, values=(descripcion,))
 
-    # Concatenar todas las cadenas de categorías y sus descripciones en una sola cadena
-    categorias_str_concat = '\n'.join(categorias_str)
+# Botón para cargar las categorías
+boton_cargar = tk.Button(ventana, text="Cargar Categorías", command=cargar_categorias)
+boton_cargar.grid()
 
-    # Mostrar la lista de categorías y sus descripciones en la caja de texto de salida
-    output_categorias.delete(1.0, tk.END)
-    output_categorias.insert(tk.END, categorias_str_concat)
-    
-# Conectar la función cargar_categorias() con el evento de clic en el botón de cargar
-button_cargar.config(command=cargar_categorias)
-
-# Mostrar la ventana principal
+# Ejecutar el bucle principal de la aplicación
 ventana.mainloop()
