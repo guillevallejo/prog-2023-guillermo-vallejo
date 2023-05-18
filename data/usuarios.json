@@ -1,1 +1,38 @@
-[{"nombre": "Guillermo Vallejo", "email": "gvallejo556@unab.edu.co", "password": "pruebapass"}, {"nombre": "test1", "email": "test@test.com", "password": "asdfasdf"}, {"nombre": "test1", "email": "test@test1.com", "password": "asdfasdf"}, {"nombre": "test1", "email": "test@test2.com", "password": "asdfasdf"}, {"nombre": "test1", "email": "test@test3.com", "password": "asdfasdf"}]
+[
+    {
+        "nombre": "dasd",
+        "email": "aasd",
+        "password": "dfsdf33"
+    },
+    {
+        "nombre": "silvia",
+        "email": "silvia@jualia.com",
+        "password": "asdf65"
+    },
+    {
+        "nombre": "asdfa",
+        "email": "asdsd",
+        "password": "2222"
+    },
+    {
+        "nombre": "dia",
+        "email": "dia",
+        "password": "dia"
+    },
+    {
+        "nombre": "dos",
+        "email": "dos",
+        "password": "dos"
+    },
+    {
+        "nombre": "Guillermo Vallejo",
+        "email": "gvallejo556@unab.edu.co",
+        "password": "111",
+        "status": 0
+    },
+    {
+        "nombre": "234",
+        "email": "adsfa@sssadf.xxx",
+        "password": "sdf"
+    }
+]

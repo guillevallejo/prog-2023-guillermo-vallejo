@@ -1,0 +1,86 @@
+[
+    {
+        "email": "test",
+        "fecha": "2023-05-13 19:10:15",
+        "categoria": "Alimentacion",
+        "monto": 2
+    },
+    {
+        "email": "test",
+        "fecha": "2023-05-13 19:10:21",
+        "categoria": "Alimentacion",
+        "monto": 2
+    },
+    {
+        "email": "test",
+        "fecha": "2023-05-13 19:10:24",
+        "categoria": "Alimentacion",
+        "monto": 3
+    },
+    {
+        "email": "test",
+        "fecha": "2023-05-13 19:10:31",
+        "categoria": "Alojamiento",
+        "monto": 4
+    },
+    {
+        "email": "dos",
+        "fecha": "2023-05-13 19:21:16",
+        "categoria": "cat1",
+        "monto": 12
+    },
+    {
+        "email": "gvallejo556@unab.edu.co",
+        "fecha": "2023-05-16 06:27:35",
+        "categoria": "categoria2",
+        "monto": 44
+    },
+    {
+        "email": "gvallejo556@unab.edu.co",
+        "fecha": "2023-05-16 06:27:41",
+        "categoria": "Alimentacion",
+        "monto": 33
+    },
+    {
+        "email": "gvallejo556@unab.edu.co",
+        "fecha": "2023-05-16 06:27:51",
+        "categoria": "cat1",
+        "monto": 11
+    },
+    {
+        "email": "dia",
+        "fecha": "2023-05-17 20:03:55",
+        "categoria": "Alimentacion",
+        "monto": ""
+    },
+    {
+        "email": "dia",
+        "fecha": "2023-05-17 20:04:01",
+        "categoria": "Alimentacion",
+        "monto": "2222"
+    },
+    {
+        "email": "gvallejo556@unab.edu.co",
+        "fecha": "2023-05-17 20:04:07",
+        "categoria": "Alimentacion",
+        "monto": "4444"
+    },
+    {
+        "email": "dia",
+        "fecha": "2023-05-17 20:09:21",
+        "categoria": "Alimentacion",
+        "monto": "3333"
+    },
+    {
+        "email": "gvallejo556@unab.edu.co",
+        "fecha": "2023-05-17 20:12:16",
+        "categoria": "Prueba",
+        "monto": "333"
+    },
+    {
+        "email": "gvallejo556@unab.edu.co",
+        "fecha": "2023-05-17 20:36:26",
+        "categoria": "Alimentacion",
+        "monto": "345"
+    }
+]

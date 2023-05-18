@@ -12,6 +12,7 @@ def menu_opcion2():
     mostrar_mensaje("Opción 2 seleccionada")
 
 def m_cat_reg():
+    
     subprocess.run(["python", "cate_reg.py"])
 
 def m_cat_list():
@@ -22,6 +23,9 @@ def m_cat_del():
 
 def m_usu_list():
     subprocess.run(["python", "usu_list.py"])
+
+def m_usu_reg():
+    subprocess.run(["python", "usu_reg.py"])
 
 def m_usu_del():
     subprocess.run(["python", "usu_del.py"])
@@ -63,6 +67,7 @@ def crear_menu(ventana):
 
     # Crear el menú Usuario
     menu_usu = tk.Menu(barra_menu, tearoff=False)
+    menu_usu.add_command(label="Registrar", command=m_usu_reg)
     menu_usu.add_command(label="Listar", command=m_usu_list)
     menu_usu.add_command(label="Eliminar", command=m_usu_del)
     barra_menu.add_cascade(label="Usuarios", menu=menu_usu)
@@ -75,7 +80,7 @@ def crear_menu(ventana):
 
     # Crear el menú Ayuda
     menu_ayuda = tk.Menu(barra_menu, tearoff=False)
-    menu_ayuda.add_command(label="Opción 9", command=menu_opcion9)
+    menu_ayuda.add_command(label="Acerca de", command=menu_opcion9)
     barra_menu.add_cascade(label="Ayuda", menu=menu_ayuda)
 
 
@@ -91,3 +96,4 @@ def crear_menu_inicio(ventana):
     menu_archivo.add_separator()
     menu_archivo.add_command(label="Salir", command=ventana.quit)
     barra_menu.add_cascade(label="Archivo", menu=menu_archivo)
+    

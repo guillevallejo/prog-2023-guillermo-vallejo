@@ -1,0 +1,41 @@
+{
+    "gastos": [
+      {
+        "usuario": "Alice",
+        "fecha": "2022-05-10",
+        "categoria": "Alimentos",
+        "monto": 60.00
+      },
+      {
+        "usuario": "Bob",
+        "fecha": "2022-05-11",
+        "categoria": "Transporte",
+        "monto": 20.00
+      },
+      {
+        "usuario": "Alice",
+        "fecha": "2022-05-12",
+        "categoria": "Entretenimiento",
+        "monto": 10.00
+      },
+      {
+        "usuario": "Bob",
+        "fecha": "2022-05-13",
+        "categoria": "Alimentos",
+        "monto": 35.00
+      },
+      {
+        "usuario": "Alice",
+        "fecha": "2022-05-14",
+        "categoria": "Transporte",
+        "monto": 15.00
+      },
+      {
+        "usuario": "Alice",
+        "fecha": "2022-05-14",
+        "categoria": "Transporte",
+        "monto": 10.00
+      }
+    ]
+  }
+  

@@ -1,6 +1,7 @@
 import json
 from tkinter import Tk, Label, Button, font, Entry, PhotoImage
 import subprocess
+import re
 
 # Crear la ventana de bienvenida
 ventana = Tk()
@@ -46,34 +47,44 @@ def registrar_usuario():
     nombre = input_nombre.get().strip()
     email = input_email.get().strip()
     password = input_password.get().strip()
-    usuario = {"nombre": nombre, "email": email, "password": password, "status": 0}
+    usuario = {"nombre": nombre, "email": email, "password": password}
 
     # Cargar usuarios existentes del archivo JSON
     try:
         with open("data/usuarios.json", "r") as archivo:
             usuarios = json.load(archivo)
     except FileNotFoundError:
-        # Si el archivo no existe, se crea una lista vacía
+        
         usuarios = []
 
     # Validar que los campos no estén vacíos
     if not nombre or not email or not password:
         label_mensaje.config(text='Todos los campos son obligatorios.')
         return
+    
+     # Validar el formato del correo electrónico
+    if not re.match(r'^[\w\.-]+@[\w\.-]+\.\w+$', email):
+        label_mensaje.config(text='Ingrese un correo electrónico válido.')
+        return
 
     # Validar si el email ya está registrado
-    for u in usuarios:
-        if u["email"] == email:
-            mensaje = "El email ya está registrado."
-            label_mensaje.config(text=mensaje)
-            return
+    if email in usuarios:
+        mensaje = "El email ya está registrado."
+        label_mensaje.config(text=mensaje)
+        return
 
-    # Agregar el nuevo usuario a la lista de usuarios
+    # Agregar el nuevo usuario al diccionario de usuarios
+    #usuarios[email] = usuario
     usuarios.append(usuario)
     
-    # Guardar la lista de usuarios en el archivo JSON
+    # Guardar el diccionario de usuarios en el archivo JSON
     with open("data/usuarios.json", "w") as archivo:
-        json.dump(usuarios, archivo)
+        json.dump(usuarios, archivo, indent=4)
+        
+     # Limpiar las cajas de texto
+    input_nombre.delete(0, 'end')
+    input_email.delete(0, 'end')
+    input_password.delete(0, 'end')
 
     mensaje = "Usuario registrado correctamente."
     label_mensaje.config(text=mensaje)

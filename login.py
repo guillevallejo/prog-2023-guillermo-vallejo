@@ -2,6 +2,7 @@ import tkinter as tk
 from tkinter import messagebox, Label, font
 from PIL import Image, ImageTk
 import json
+import subprocess
 
 # Crear la ventana de bienvenida
 ventana_inicio = tk.Tk()
@@ -92,7 +93,15 @@ entry_contraseña = tk.Entry(ventana_inicio, show="*")
 entry_contraseña.grid(row=2, column=1)
 
 button_iniciar = tk.Button(ventana_inicio, text="Iniciar Sesión", command=iniciar_sesion, width=16, height=2)
-button_iniciar.grid(row=3, column=0, columnspan=2)
+button_iniciar.grid(row=3, column=1, columnspan=2)
+
+def ventana_registro():
+    # Cerrar la ventana de bienvenida
+    ventana_inicio.destroy()
+    subprocess.run(["python", "usu_reg.py"])
+
+button_registrar = tk.Button(ventana_inicio, text="Registrar", command=ventana_registro, width=16, height=2)
+button_registrar.grid(row=4, column=1, columnspan=2)
 
 # Mostrar la ventana de inicio de sesión
 ventana_inicio.mainloop()
