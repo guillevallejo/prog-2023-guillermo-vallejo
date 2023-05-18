@@ -3,6 +3,7 @@ import tkinter as tk
 from tkinter import Tk, ttk, PhotoImage, Label, END, messagebox
 import menu
 from sesion import sesion
+import locale
 
 # Crear la ventana principal
 ventana = Tk()
@@ -36,6 +37,10 @@ lista_gastos.grid(row=2, column=0, columnspan=5, sticky='nsew')
 
 def cargar_gastos():
     # Cargar los gastos del archivo JSON
+    # Configurar el formato de moneda
+    locale.setlocale(locale.LC_ALL, '')  # Configurar la configuración regional actual
+
+    
     try:
         with open("data/gastos.json", "r") as archivo:
             gastos = json.load(archivo)
@@ -55,7 +60,8 @@ def cargar_gastos():
         email = gasto["email"]
         categoria = gasto["categoria"]
         monto = gasto["monto"]
-        lista_gastos.insert("", tk.END, values=(fecha, email, categoria, monto))
+        monto_con_signo = locale.currency(monto)  # Obtener el monto con signo de moneda
+        lista_gastos.insert("", tk.END, values=(fecha, email, categoria, monto_con_signo))
 
 def eliminar_gasto():
     # Obtener el índice del gasto seleccionado en el árbol de gastos

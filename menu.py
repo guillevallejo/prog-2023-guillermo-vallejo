@@ -8,8 +8,11 @@ def mostrar_mensaje(mensaje):
 def main_2():
     subprocess.run(["python", "main_2.py"])
     
+def export():
+    subprocess.run(["python", "excel.py"])
+    
 def m_cat_reg():
-        subprocess.run(["python", "cate_reg.py"])
+    subprocess.run(["python", "cate_reg.py"])
 
 def m_cat_list():
     
@@ -54,6 +57,7 @@ def crear_menu(ventana):
     menu_archivo = tk.Menu(barra_menu, tearoff=False)
     menu_archivo.add_separator()
     menu_archivo.add_command(label="Inicio", command=main_2)
+    menu_archivo.add_command(label="Exportar", command=export)
     menu_archivo.add_command(label="Salir", command=ventana.quit)
     barra_menu.add_cascade(label="Archivo", menu=menu_archivo)
 

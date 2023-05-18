@@ -1,6 +1,7 @@
 import openpyxl
 import json
 from openpyxl.styles import numbers
+from tkinter import messagebox, Label, font
 
 # Cargar los datos de los gastos desde el archivo JSON
 with open('data/gastos.json') as archivo:
@@ -29,7 +30,7 @@ hoja["D1"] = "Monto"
 # Dar formato de moneda a la columna de Monto
 currency_format = numbers.FORMAT_CURRENCY_USD
 for fila, gasto in enumerate(gastos_usuario, start=2):
-    hoja.cell(row=fila, column=1).value = gasto["fecha"]
+    hoja.cell(row=fila, column=1).value = gasto["email"]
     hoja.cell(row=fila, column=2).value = gasto["fecha"]
     hoja.cell(row=fila, column=3).value = gasto["categoria"]
     monto_celda = hoja.cell(row=fila, column=4)
@@ -42,3 +43,4 @@ hoja.column_dimensions["B"].width = 12
 hoja.column_dimensions["C"].width = 12
 # Guardar el archivo de Excel
 wb.save("data/gastos_usuario.xlsx")
+messagebox.showerror("Exportar", "Los datos del usuarios fueron exportados con exito.")

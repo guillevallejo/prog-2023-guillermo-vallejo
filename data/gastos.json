@@ -40,5 +40,29 @@
         "fecha": "2023-05-18 15:04:11",
         "categoria": "Alimentacion",
         "monto": 4444
+    },
+    {
+        "email": "unab@unab.edu.co",
+        "fecha": "2023-05-18 16:35:07",
+        "categoria": "Educacion",
+        "monto": 150000
+    },
+    {
+        "email": "unab@unab.edu.co",
+        "fecha": "2023-05-18 16:35:17",
+        "categoria": "Alojamiento",
+        "monto": 200000
+    },
+    {
+        "email": "unab@unab.edu.co",
+        "fecha": "2023-05-18 16:59:58",
+        "categoria": "Educacion",
+        "monto": 10000
+    },
+    {
+        "email": "unab@unab.edu.co",
+        "fecha": "2023-05-18 17:00:14",
+        "categoria": "Alojamiento",
+        "monto": 150000
     }
 ]
