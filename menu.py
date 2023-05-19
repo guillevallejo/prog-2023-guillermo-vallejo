@@ -40,7 +40,10 @@ def m_gas_del():
     subprocess.run(["python", "gas_del.py"])
 
 def acercade():
-    subprocess.run(["python", "acercade.py"])    
+    subprocess.run(["python", "acercade.py"])
+    
+def ahorra():
+    subprocess.run(["python", "ahorra.py"])      
 
 def crear_menu(ventana):
     # Crear la ventana principal
@@ -83,7 +86,7 @@ def crear_menu(ventana):
 
     # Crear el menú Ayuda
     menu_ayuda = tk.Menu(barra_menu, tearoff=False)
-    menu_ayuda.add_command(label="Ahorra", command=acercade)
+    menu_ayuda.add_command(label="Ahorra", command=ahorra)
     menu_ayuda.add_command(label="Acerca de", command=acercade)
     barra_menu.add_cascade(label="Ayuda", menu=menu_ayuda)
 
